@@ -1,0 +1,22 @@
+.swiper-button-prev, .swiper-button-next{
+    position: absolute;
+    z-index: 10;
+    width: 16px
+}
+
+.bidang-unhover {
+    display: block
+
+}
+
+.bidang-hover {
+    overflow: hidden;
+    transition: .5s ease;
+    height: 100%;
+    top: -200%;
+
+}
+
+.bidang:hover .bidang-hover {
+    top: 0
+}

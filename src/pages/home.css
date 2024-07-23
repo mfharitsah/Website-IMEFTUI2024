@@ -1,0 +1,73 @@
+.isi-visi {
+    height: 3px;
+    padding: 0;
+    bottom:0.5px
+}
+
+.isi-misi {
+    height: 3px;
+    padding: 0;
+    font-size: 0.5rem;
+    line-height: 0.75rem;
+}
+
+.vismis .visi:hover .isi-visi{
+    height: 140%;
+    padding: 6px
+}
+
+@media (max-width: 468px) {
+    .vismis .misi:hover .isi-misi{
+        height: 325%;
+        padding: 6px;
+    }
+  }
+
+@media (min-width: 468px) {
+    .vismis .misi:hover .isi-misi{
+        height: 325%;
+        padding: 6px;
+    }
+
+    .isi-misi {
+        height: 3px;
+        padding: 0;
+        font-size: 0.6rem;
+        line-height: 0.9rem;
+    }
+  }
+
+  @media (min-width: 678px) {
+    .vismis .misi:hover .isi-misi{
+        height: 250%;
+        padding: 6px;
+    }
+  }
+
+  @media (min-width: 1040px) {
+    .vismis .misi:hover .isi-misi{
+        height: 300%;
+        padding: 6px;
+    }
+
+    .isi-misi {
+        height: 3px;
+        padding: 0;
+        font-size: 0.7rem;
+        line-height: 1rem;
+    }
+  }
+
+  @media (min-width: 1148px) {
+    .vismis .misi:hover .isi-misi{
+        height: 250%;
+        padding: 6px;
+    }
+
+    .isi-misi {
+        height: 3px;
+        padding: 0;
+        font-size: 0.7rem;
+        line-height: 1rem;
+    }
+  }
