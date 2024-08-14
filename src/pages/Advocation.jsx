@@ -134,7 +134,7 @@ const Advocation = () => {
       {activeCarousel && (
         <div id="carousel-section" className="min-h-screen bg-blue-900/90 backdrop-blur-sm flex flex-col items-center justify-start p-4 md:p-8 relative text-light">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 mt-20 animate-fadeInDown text-center">{carouselData[activeCarousel].title}</h1>
-          <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 max-w-3xl mx-auto animate-fadeIn">
+          <div className="w-full sm:w-2/12 md:w-5/12 lg:w-3/12 max-w-3xl mx-auto animate-fadeIn">
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
