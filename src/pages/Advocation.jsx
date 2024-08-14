@@ -133,8 +133,8 @@ const Advocation = () => {
 
       {activeCarousel && (
         <div id="carousel-section" className="min-h-screen bg-blue-900/90 backdrop-blur-sm flex flex-col items-center justify-start p-4 md:p-8 relative text-light">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 mt-20 animate-fadeInDown text-center">{carouselData[activeCarousel].title}</h1>
-          <div className="w-full sm:w-2/12 md:w-5/12 lg:w-3/12 max-w-3xl mx-auto animate-fadeIn">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 mt-16 animate-fadeInDown text-center">{carouselData[activeCarousel].title}</h1>
+          <div className="w-full  md:w-5/6 lg:w-3/12 max-w-3xl mx-auto animate-fadeIn">
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
@@ -159,13 +159,13 @@ const Advocation = () => {
               {carouselData[activeCarousel].slides.map((slide, index) => (
                 <SwiperSlide key={index} className="bg-white rounded-lg overflow-hidden shadow-xl">
                   <div className="aspect-w-16 aspect-h-9">
-                    <img src={slide} alt={`Slide ${index + 1}`} className="object-contain w-full h-full" />
+                    <img src={slide} alt={`Slide ${index + 1}`} className="transform scale-95  object-contain" />
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-          <button onClick={handleClose} className={`mt-8 px-6 py-3 rounded-full shadow-lg transition-colors duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl ${bgGradientStyleBlue} ${hoverGradientStyleSun}`}>
+          <button onClick={handleClose} className={`mt-2 px-6 py-3 rounded-full shadow-lg transition-colors duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl ${bgGradientStyleBlue} ${hoverGradientStyleSun}`}>
             Back to Menu
           </button>
         </div>
