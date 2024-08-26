@@ -2,6 +2,8 @@ import React from 'react'
 
 import bg_akpro from '../assets/academics/bg-akpro.svg'
 import logo_akpro from '../assets/academics/logo-akpro-ellipse.svg'
+import Preloader from '../components/Preloader'
+import transition from '../transitions/transition'
 
 const Academics = () => {
 
@@ -35,32 +37,37 @@ const Academics = () => {
     const bgGrandientStyleBlue = "bg-blue-1 bg-gradient-to-b from-blue to-blue-1 text-light";
     const hoverGrandientStyleSun = "hover:bg-sun hover:bg-gradient-to-b hover:from-sun hover:to-sun-1 duration-500 hover:text-dark";
 
-  return (
-    <div className='bg-[image:var(--image-url)] bg-cover'
-        style={{'--image-url': `url(${bg_akpro})`}}
-        >
-        <div className='backdrop-blur-sm min-h-screen flex flex-col justify-center items-center py-20 lg:px-0'>
-            <div className='akpro flex flex-col justify-center items-center'>
-                <img src={logo_akpro} className='w-28' alt="" />
-                <p className='text-light font-semibold text-3xl drop-shadow-lg'>Akademis dan Keprofesian</p>
-            </div>
+    return (
+        <div>
 
-            <div className='menus grid grid-cols-1 gap-5 justify-items-center mt-10'>
-                {
-                    listMenuAkpro.map((menu, i) => (
-                        <a href={menu.link}>
-                            <div className={`${bgGrandientStyleBlue} ${hoverGrandientStyleSun} hover:scale-105 lg:w-[48rem] p-2 px-4 rounded-xl bg-size-150 bg-pos-0 hover:bg-pos-100 hover:cursor-pointer`}
-                            >
-                                <p className='text-center text-2xl font-semibold'>{menu.menu}</p>
-                            </div>
-                        </a>
-                    ))
-                }
+            <div className='bg-[image:var(--image-url)] bg-cover'
+                style={{ '--image-url': `url(${bg_akpro})` }}
+            >
+                <div className='backdrop-blur-sm min-h-screen flex flex-col justify-center items-center py-20 lg:px-0'>
+                    <div className='akpro flex flex-col justify-center items-center'>
+                        <img src={logo_akpro} className='w-28' alt="" />
+                        <p className='text-light font-semibold text-3xl drop-shadow-lg'>Akademis dan Keprofesian</p>
+                    </div>
 
+                    <div className='menus grid grid-cols-1 gap-5 justify-items-center mt-10'>
+                        {
+                            listMenuAkpro.map((menu, i) => (
+                                <a key={i} href={menu.link}>
+                                    <div className={`${bgGrandientStyleBlue} ${hoverGrandientStyleSun} hover:scale-105 lg:w-[48rem] p-2 px-4 rounded-xl bg-size-150 bg-pos-0 hover:bg-pos-100 hover:cursor-pointer`}
+                                    >
+                                        <p className='text-center text-2xl font-semibold'>{menu.menu}</p>
+                                    </div>
+                                </a>
+                            ))
+                        }
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
+
+
 }
 
-export default Academics
+export default transition(Academics)
