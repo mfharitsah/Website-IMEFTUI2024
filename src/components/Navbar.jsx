@@ -29,7 +29,7 @@ const Navbar = () => {
 
 return (
     <motion.nav 
-        className="navigation-bar fixed top-0 z-10 w-screen h-20 px-10 md:px-16 flex items-center justify-between  text-light"
+        className="navigation-bar fixed top-0 z-20 w-screen h-20 px-10 md:px-16 flex items-center justify-between  text-light"
         style={{
             backgroundColor: opacityOff,
         }}

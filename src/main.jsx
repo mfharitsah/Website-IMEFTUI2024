@@ -6,6 +6,7 @@ import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Advocation from './pages/Advocation.jsx'
 import Academics from './pages/Academics.jsx'
+import Activites from './pages/Activites.jsx'
 import { CaraPembayaranBOP, TataCaraBeasiswaUI } from './components/Carousel.jsx'
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/academics",
         element: <Academics />
+      },
+      {
+        path: "/activities",
+        element: <Activites />
       },
       {
         path: "/advocation/cara-pembayaran-bop",
