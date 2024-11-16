@@ -243,4 +243,4 @@ const Academics = () => {
   )
 }
 
-export default transition(Academics)
+export default Academics

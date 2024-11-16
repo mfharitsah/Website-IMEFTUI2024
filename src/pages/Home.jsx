@@ -8,7 +8,6 @@ import arrow3 from '../assets/main/arrow-3.svg'
 import bg_1 from '../assets/main/elektro-bg-1.svg'
 import bg_2 from '../assets/main/elektro-bg-2.svg'
 import our from '../assets/main/our.png'
-import gl from '../assets/activities/gl.png'
 import bg_activities from '../assets/activities/bg.png'
 
 import SwiperBidang from '../components/SwiperBidang'
@@ -40,9 +39,9 @@ const Home = () => {
 
                 <div className='h-fit flex flex-col'>
                     <p className='text-light text-xs md:text-lg italic tracking-wider'>Sambut salam hangat dari kami...</p>
-                    <div className='text-5xl md:text-7xl lg:text-9xl flex tracking-wide gap-2 md:gap-6'>
-                        <p  className={`${textGrandientStyleSun} italic font-bold`}>PAGI</p>
-                        <h1 className=''><span className={`${textGrandientStyle} italic font-bold`} >ELEKTRO!</span></h1>
+                    <div className='text-5xl md:text-7xl lg:text-9xl flex tracking-wide gap-2 md:gap-6 '>
+                        <p  className={`${textGrandientStyleSun} italic font-bold pr-3`}>PAGI</p>
+                        <h1 className=''><span className={`${textGrandientStyle} italic font-bold pr-3`} >ELEKTRO!</span></h1>
                     </div>
                 </div>
 
@@ -71,14 +70,14 @@ const Home = () => {
                     <SwiperBidang />
                 </div>
                 <div data-aos="fade-left" className='vismis w-5/6 h-64 md:h-fit md:w-2/5 flex flex-col justify-center items-center px-14 md:px-0'>
-                    <div data-aos="fade-down" className='visi w-full relative text-center cursor-pointer'>
+                    <div data-aos="fade-left" className='visi w-full relative text-center cursor-pointer'>
                         <p className={` ${textGrandientStyle} text-7xl md:text-8xl font-bold`}>VISI</p>
                         <div name='' className='isi-visi absolute bg-light text-justify p-2 duration-500 ease-in-out overflow-hidden'>
                             <p className='text-dark text-xs '>Terwujudnya IME FTUI yang berkomitmen dalam memberikan wadah pengembangan
                                 secara komprehensif dan adaptif dalam segala kondisi agar dapat menciptakan iklim IME FTUI yang progresif</p>
                         </div>
                     </div>
-                    <div data-aos="fade-up" className='misi w-full relative text-center cursor-pointer'>
+                    <div data-aos="fade-left" className='misi w-full relative text-center cursor-pointer'>
                         <div name='' className='isi-misi absolute bg-light space-y-1 p-2 duration-500 ease-in-out overflow-hidden'>
                             <p className=''>Membangun internalisasi IME FTUI 2024 yang dapat mencapai keseimbangan antara profesionalitas dan kekeluargaan sehingga menciptakan iklim kerja IME FTUI yang optimal dan progresif untuk seluruh fungsionarisnya</p>
                             <p>Mengoptimalkan pengembangan lembaga dan potensi individu pengurus secara evaluatif dan konstruktif agar menciptakan regenerasi yang unggul</p>

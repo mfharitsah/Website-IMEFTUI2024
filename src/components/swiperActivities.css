@@ -1,11 +1,46 @@
-
-
+.activity {
+    position: relative;
+  }
+  
 .overlay {
-
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(65,140,237,0.8521533613445378) 60%, rgba(65,140,237,0.8801645658263305) 100%);
+    position: absolute;
+    bottom: -40%;
+    transition: 0.7s ease;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(65, 140, 237, 0.85) 60%, rgba(65, 140, 237, 0.88) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+  
 .gl-text {
-    transition: .7s ease;
-    text-shadow: 2px 3px 2px rgba(0,0,0,0.28);
+    transition: 0.7s ease;
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.28);
 }
+  
+.description {
+    opacity: 0;
+    transition: 5s ease;
+}
+  
+.activity.hovered .overlay {
+    bottom: 0;
+}
+  
+.activity.hovered .gl-text {
+    font-size: 40px;
+    line-height: 46px;
+}
+
+.activity.clicked .overlay {
+    background-color: #418ced;
+}
+  
+.activity.clicked .gl-text {
+    transform: translateY(-100px);
+}
+  
+.activity.clicked .description {
+    position: absolute;
+    opacity: 1;
+}
+  

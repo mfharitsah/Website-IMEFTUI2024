@@ -132,42 +132,46 @@ const Advocation = () => {
       </div>
 
       {activeCarousel && (
-        <div id="carousel-section" className="min-h-screen bg-blue-900/90 backdrop-blur-sm flex flex-col items-center justify-start p-4 md:p-8 relative text-light">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 mt-16 animate-fadeInDown text-center">{carouselData[activeCarousel].title}</h1>
-          <div className="w-full  md:w-5/6 lg:w-3/12 max-w-3xl mx-auto animate-fadeIn">
-            <Swiper
-              effect={"coverflow"}
-              grabCursor={true}
-              centeredSlides={true}
-              slidesPerView={1}
-              coverflowEffect={{
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-              }}
-              modules={[EffectCoverflow, Pagination, Navigation]}
-              className="mySwiper"
-              pagination={{
-                type: "fraction",
-              }}
-              navigation={true}
-              loop={false}
-              onSwiper={setSwiper}
-            >
-              {carouselData[activeCarousel].slides.map((slide, index) => (
-                <SwiperSlide key={index} className="bg-white rounded-lg overflow-hidden shadow-xl">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <img src={slide} alt={`Slide ${index + 1}`} className="transform scale-95  object-contain" />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+        <div className="backdrop-blur-sm min-h-screen pb-10">
+          <div id="carousel-section" className="bg-blue-900/90  flex flex-col lg:flex-row items-center justify-start lg:justify-between p-4  md:p-8 relative text-light">
+            <h1 className="text-3xl md:text-4xl font-bold text-white animate-fadeInDown text-center mt-16 lg:mt-0 lg:ml-10">{carouselData[activeCarousel].title}</h1>
+            <div className="w-full md:w-5/6 lg:w-4/12 max-w-3xl mx-auto animate-fadeIn mt-16">
+              <Swiper
+                effect={"coverflow"}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={1}
+                coverflowEffect={{
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                }}
+                modules={[EffectCoverflow, Pagination, Navigation]}
+                className="mySwiper"
+                pagination={{
+                  type: "fraction",
+                }}
+                navigation={true}
+                loop={false}
+                onSwiper={setSwiper}
+              >
+                {carouselData[activeCarousel].slides.map((slide, index) => (
+                  <SwiperSlide key={index} className="bg-white rounded-lg overflow-hidden shadow-xl">
+                    <div className="aspect-w-16 aspect-h-9">
+                      <img src={slide} alt={`Slide ${index + 1}`} className="transform scale-95  object-contain" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
-          <button onClick={handleClose} className={`mt-2 px-6 py-3 rounded-full shadow-lg transition-colors duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl ${bgGradientStyleBlue} ${hoverGradientStyleSun}`}>
-            Back to Menu
-          </button>
+          <div className="w-full h-fit flex justify-center items-center">
+            <button onClick={handleClose} className={`mt-2 px-6 py-3 rounded-full shadow-lg transition-colors duration-300 text-lg font-semibold transform hover:scale-105 hover:shadow-xl ${bgGradientStyleBlue} ${hoverGradientStyleSun}`}>
+              Back to Menu
+            </button>
+          </div>
         </div>
       )}
     </div>

@@ -1,34 +1,19 @@
 import React, { useState } from 'react';
-import gl from '../assets/activities/gl.png';
 import './activities.css';
 
+import tw1 from '../assets/activities/tw1'
+import tw2 from '../assets/activities/tw2'
+import tw3a from '../assets/activities/tw3a'
+import tw3b from '../assets/activities/tw3b'
+
 const timelines = [
-    { title: "Triwulan 1", dateRange: "(Feb 2024 - Apr 2024)", numCards: 9 },
-    { title: "Triwulan 2", dateRange: "(May 2024 - Jul 2024)", numCards: 5 }
+    { title: "Triwulan I", dateRange: "(Feb 2024 - Apr 2024)", activites: tw1, numCards: 10 },
+    { title: "Triwulan II", dateRange: "(May 2024 - Jul 2024)", activites: tw2, numCards: 5 },
+    { title: "Triwulan IIIA", dateRange: "(Aug 2024 - Oct 2024)", activites: tw3a, numCards: 5 },
+    { title: "Triwulan IIIB", dateRange: "(Nov 2024 - Dec 2024)", activites: tw3b, numCards: 5 }
 ];
 
-const ImageGrid = ({ numCards = 3, cardsPerRow = 3 }) => {
-    const rows = [];
-    for (let i = 0; i < numCards; i += cardsPerRow) {
-        const rowCards = Array.from({ length: Math.min(cardsPerRow, numCards - i) }, (_, j) => (
-            <ImageCard key={i + j} />
-        ));
-        rows.push(rowCards);
-    }
-
-    return (
-        <>
-            {rows.map((rowCards, rowIndex) => (
-                <div key={rowIndex} className="flex gap-5 justify-center max-md:flex-col mb-6">
-                    {rowCards}
-                </div>
-            ))}
-        </>
-    );
-};
-
-
-const ImageCard = () => {
+const ImageCard = ({ activity }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
 
@@ -38,7 +23,7 @@ const ImageCard = () => {
 
     const handleMouseLeave = () => {
         setIsHovered(false);
-        
+
         if (isClicked) {
             setIsClicked(false);
         }
@@ -46,28 +31,62 @@ const ImageCard = () => {
 
     const handleClick = () => {
         setIsClicked(true);
-    }
+    };
 
     return (
-        <div className="flex flex-col w-[426px] items-center justify-center max-md:ml-0 max-md:w-full">
-            <div className={`activity relative w-fit h-fit rounded-xl overflow-hidden ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={handleClick}
-            >
-                <img src={gl} className="bg-cover block" alt="" />
-                <div className="overlay absolute flex justify-center align-center w-full h-full">
-                    <p className="gl-text text-light text-center text-3xl font-semibold drop-shadow-xl">Grand Launching</p>
-                    {isClicked && <p className="description text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut bibendum nisi, in facilisis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut bibendum nisi, in facilisis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut bibendum nisi, in facilisis leo.</p>}
-                </div>
+        <div
+            className={`activity relative w-[28rem] h-[20rem] rounded-xl overflow-hidden transition-transform duration-300 ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
+        >
+            <img
+                src={activity.img}
+                className="block w-full h-full object-cover"
+                alt={activity.name}
+            />
+            <div className="overlay absolute flex flex-col justify-center align-center w-full h-full">
+                <p className="gl-text text-light text-center text-3xl font-semibold drop-shadow-xl">
+                    {activity.name}
+                </p>
+                {isClicked && (
+                    <p className="description text-center mt-2">
+                        {activity.desc}
+                    </p>
+                )}
             </div>
         </div>
+
+
     );
 };
 
-const TimelineSection = ({ title, dateRange, numCards }) => {
+
+const ImageGrid = ({ numCards = 3, cardsPerRow = 3, activities = [] }) => {
+    const rows = [];
+    for (let i = 0; i < numCards; i += cardsPerRow) {
+        const rowCards = activities.slice(i, i + cardsPerRow).map((activity, index) => (
+            <ImageCard activity={activity} key={i + index} />
+        ));
+        rows.push(rowCards);
+    }
+
+    return (
+        <>
+            {rows.map((rowCards, rowIndex) => (
+                <div key={rowIndex} className="flex gap-8 justify-center max-md:flex-col mb-6">
+                    {rowCards}
+                </div>
+            ))}
+        </>
+    );
+};
+
+
+const TimelineSection = ({ title, dateRange, activities }) => {
     const textGradientStyle = "text-blue-1 text-opacity-0 bg-gradient-to-b from-blue to-blue-1 bg-clip-text inline-block";
     const cardsPerRow = 3;
+    const numCards = activities.length;
 
     return (
         <main className="flex flex-wrap gap-5 self-center w-full mb-10 max-md:max-w-full">
@@ -83,7 +102,7 @@ const TimelineSection = ({ title, dateRange, numCards }) => {
                     {dateRange}
                 </div>
                 <div className="mt-6 max-md:max-w-full">
-                    <ImageGrid numCards={numCards} cardsPerRow={cardsPerRow} />
+                    <ImageGrid numCards={numCards} cardsPerRow={cardsPerRow} activities={activities} />
                 </div>
             </section>
         </main>
@@ -94,14 +113,14 @@ function Activities() {
     return (
         <div className="flex flex-col pt-20 pl-16 max-md:pl-0 max-md:pt-24">
             <div className="flex overflow-hidden flex-col w-full max-md:max-w-full">
-                    {timelines.map((timeline, index) => (
-                        <TimelineSection 
-                            key={index} 
-                            title={timeline.title} 
-                            dateRange={timeline.dateRange}
-                            numCards={timeline.numCards}
-                        />
-                    ))}
+                {timelines.map((timeline, index) => (
+                    <TimelineSection
+                        key={index}
+                        title={timeline.title}
+                        dateRange={timeline.dateRange}
+                        activities={timeline.activites}
+                    />
+                ))}
             </div>
         </div>
     );
