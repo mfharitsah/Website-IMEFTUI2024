@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './home.css'
 
 import bg_landing from '../assets/main/hero-bg.svg'
@@ -10,6 +10,10 @@ import bg_2 from '../assets/main/elektro-bg-2.svg'
 import our from '../assets/main/our.png'
 import bg_activities from '../assets/activities/bg.png'
 
+import tw1 from '../assets/activities/tw1'
+import tw2 from '../assets/activities/tw2'
+import tw3a from '../assets/activities/tw3a'
+
 import SwiperBidang from '../components/SwiperBidang'
 import SwiperActivities from '../components/SwiperActivities'
 import Preloader from '../components/Preloader'
@@ -20,12 +24,25 @@ import 'aos/dist/aos.css'
 
 const Home = () => {
 
+    const [homeActivities, setHomeActivities] = useState([]);
+
     const textGrandientStyle = "text-blue-1 text-opacity-0 bg-gradient-to-b from-blue to-blue-1 bg-clip-text inline-block";
     const textGrandientStyleSun = "text-sun-1 text-opacity-0 bg-gradient-to-b from-sun to-sun-1 bg-clip-text inline-block";
 
     useEffect(() => {
+        const allActivities = [
+            ...tw1.filter((activity) => activity.unggulan),
+            ...tw2.filter((activity) => activity.unggulan),
+            ...tw3a.filter((activity) => activity.unggulan)
+        ];
+
+        setHomeActivities(allActivities);
+    }, []);
+
+    useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
+
 
     return (
         <div className='font-sf-pro'>
@@ -40,7 +57,7 @@ const Home = () => {
                 <div className='h-fit flex flex-col'>
                     <p className='text-light text-xs md:text-lg italic tracking-wider'>Sambut salam hangat dari kami...</p>
                     <div className='text-5xl md:text-7xl lg:text-9xl flex tracking-wide gap-2 md:gap-6 '>
-                        <p  className={`${textGrandientStyleSun} italic font-bold pr-3`}>PAGI</p>
+                        <p className={`${textGrandientStyleSun} italic font-bold pr-3`}>PAGI</p>
                         <h1 className=''><span className={`${textGrandientStyle} italic font-bold pr-3`} >ELEKTRO!</span></h1>
                     </div>
                 </div>
@@ -91,17 +108,16 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='our-activities bg-[image:var(--image-url)] bg-fixed h-fit py-16 px-10 xl:px-36 mt-20 space-y-8'
+            <div className="our-activities bg-[image:var(--image-url)] bg-fixed h-fit py-16 px-10 xl:px-36 mt-20 space-y-8"
                 style={{ '--image-url': `url(${bg_activities})` }}
             >
-                <div data-aos="fade-down" className='flex items-center h-fit gap-2'>
-                    <img src={our} className='w-4 h-10 md:h-14 mt-2' alt="" />
+                <div data-aos="fade-down" className="flex items-center h-fit gap-2">
+                    <img src={our} className="w-4 h-10 md:h-14 mt-2" alt="" />
                     <p className={`${textGrandientStyleSun} text-5xl md:text-7xl font-bold`}>ACTIVITIES</p>
                 </div>
-                <div data-aos="fade-up" className='bg-light bg-opacity-10 p-5 rounded-2xl ring-1 ring-opacity-20 ring-light'>
-                    <SwiperActivities />
+                <div data-aos="fade-up" className="bg-light bg-opacity-10 p-5 rounded-2xl ring-1 ring-opacity-20 ring-light">
+                    <SwiperActivities activities={homeActivities} />
                 </div>
-
             </div>
 
             <div className='w-full h-fit p-10 md:px-14'>

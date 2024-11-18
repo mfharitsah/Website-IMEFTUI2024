@@ -7,10 +7,10 @@ import tw3a from '../assets/activities/tw3a'
 import tw3b from '../assets/activities/tw3b'
 
 const timelines = [
-    { title: "Triwulan I", dateRange: "(Feb 2024 - Apr 2024)", activites: tw1, numCards: 10 },
-    { title: "Triwulan II", dateRange: "(May 2024 - Jul 2024)", activites: tw2, numCards: 5 },
-    { title: "Triwulan IIIA", dateRange: "(Aug 2024 - Oct 2024)", activites: tw3a, numCards: 5 },
-    { title: "Triwulan IIIB", dateRange: "(Nov 2024 - Dec 2024)", activites: tw3b, numCards: 5 }
+    { title: "Triwulan I", dateRange: "(Feb 2024 - Apr 2024)", activities: tw1, numCards: 10 },
+    { title: "Triwulan II", dateRange: "(May 2024 - Jul 2024)", activities: tw2, numCards: 5 },
+    { title: "Triwulan IIIA", dateRange: "(Aug 2024 - Oct 2024)", activities: tw3a, numCards: 5 },
+    { title: "Triwulan IIIB", dateRange: "(Nov 2024 - Dec 2024)", activities: tw3b, numCards: 5 }
 ];
 
 const ImageCard = ({ activity }) => {
@@ -88,8 +88,16 @@ const TimelineSection = ({ title, dateRange, activities }) => {
     const cardsPerRow = 3;
     const numCards = activities.length;
 
+    // Format title menjadi lowercase tanpa spasi
+    const formattedTitle = 'tw' + title.slice(8).toLowerCase().replace(/\s+/g, '');
+    console.log(formattedTitle);
+    
+
     return (
-        <main className="flex flex-wrap gap-5 self-center w-full mb-10 max-md:max-w-full">
+        <main 
+            className="flex flex-wrap gap-5 self-center w-full mb-10 max-md:max-w-full" 
+            id={formattedTitle}
+        >
             <div className="flex flex-col">
                 <div className="flex z-10 shrink-0 bg-[#418CED] rounded-full h-[52px] w-[52px]" />
                 <div className="flex shrink-0 self-center -mt-1 w-2.5 bg-[#418CED] h-full" />
@@ -101,13 +109,22 @@ const TimelineSection = ({ title, dateRange, activities }) => {
                 <div className="z-10 self-start -mt-1.5 text-base font-medium text-[#F2F4F8] ml-8">
                     {dateRange}
                 </div>
-                <div className="mt-6 max-md:max-w-full">
-                    <ImageGrid numCards={numCards} cardsPerRow={cardsPerRow} activities={activities} />
-                </div>
+                {
+                    title === "Triwulan IIIB" ? (
+                        <div className="mt-6 max-md:max-w-full flex justify-start mb-20">
+                            <p className='text-light font-semibold text-4xl italic'>Coming Soon...</p>
+                        </div>
+                    ) : (
+                        <div className="mt-6 max-md:max-w-full">
+                            <ImageGrid numCards={numCards} cardsPerRow={cardsPerRow} activities={activities} />
+                        </div>
+                    )
+                }
             </section>
         </main>
     );
 };
+
 
 function Activities() {
     return (
@@ -118,7 +135,7 @@ function Activities() {
                         key={index}
                         title={timeline.title}
                         dateRange={timeline.dateRange}
-                        activities={timeline.activites}
+                        activities={timeline.activities}
                     />
                 ))}
             </div>

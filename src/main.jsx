@@ -8,6 +8,7 @@ import Advocation from './pages/Advocation.jsx'
 import Academics from './pages/Academics.jsx'
 import Activites from './pages/Activites.jsx'
 import { CaraPembayaranBOP, TataCaraBeasiswaUI } from './components/Carousel.jsx'
+import Contacts from './pages/Contacts.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/activities",
         element: <Activites />
+      },
+      {
+        path: "/contacts",
+        element: <Contacts />
       },
       {
         path: "/advocation/cara-pembayaran-bop",

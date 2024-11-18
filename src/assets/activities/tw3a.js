@@ -42,7 +42,7 @@ export default [
         name: "Tribution",
         desc: "Tribution adalah seminar yang diadakan oleh Kewirus IME FTUI. Acara berisi seminar tentang pengelolaan keuangan serta peningkatan kualitas suatu usaha hingga bisa memberikan profit yang lebih besar.",
         img: tribution,
-        unggulan: false
+        unggulan: true
     },
     {
         name: "Grand Opening ECHA",
@@ -84,6 +84,6 @@ export default [
         name: "Winning Elektro",
         desc: "Winning Elekro adalah ajang perlombaan antar angkatan Departemen Teknik Elektro. Kegiatan ini mempertemukan angkatan 2024, 2023, 2022, dan 2021 untuk bertanding pada cabang olahraga maupun lomba seru lainnya.",
         img: go_we,
-        unggulan: true
+        unggulan: false
     },
 ]

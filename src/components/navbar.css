@@ -1,0 +1,65 @@
+.nav-item {
+    position: relative;
+    display: inline-block;
+    color: #ffffff; /* Warna teks */
+    font-size: 1rem; /* Ukuran teks */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-item::before {
+    content: ''; /* Membuat elemen pseudo */
+    position: absolute;
+    bottom: 0; /* Garis berada di bawah teks */
+    left: 50%; /* Mulai dari tengah */
+    width: 0; /* Awalnya tidak terlihat */
+    height: 2px; /* Ketebalan garis */
+    background-color: #418DED; /* Warna garis */
+    transform: translateX(-50%) scaleX(0); /* Garis dimulai dari tengah dengan lebar 0 */
+    transform-origin: center; /* Titik transformasi di tengah */
+    transition: transform 0.3s ease-in-out; /* Animasi halus */
+}
+
+.nav-item:hover::before {
+    transform: translateX(-50%) scaleX(1); /* Garis melebar ke kiri dan kanan */
+    width: 100%; /* Lebar penuh */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Dropdown muncul di bawah menu */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna latar dropdown */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 20;
+
+    /* Tersembunyi secara visual dan tidak dapat diakses */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility 0s, opacity 0.3s ease-in-out; /* Animasi untuk opacity */
+}
+
+/* Tampilkan dropdown saat parent atau dropdown di-hover */
+.group:hover .dropdown-menu,
+.dropdown-menu:hover {
+    visibility: visible; /* Tampilkan dropdown */
+    opacity: 1; /* Tidak transparan */
+    pointer-events: auto; /* Aktifkan interaksi */
+}
+
+/* Hover Style untuk Dropdown Item */
+.dropdown-menu li {
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+    background-color: #1650E5; /* Warna hover */
+    color: #fff;
+}
+
