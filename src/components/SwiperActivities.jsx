@@ -21,9 +21,6 @@ const SwiperActivities = ({ activities }) => {
                     700: {
                         slidesPerView: 2, // 2 slide untuk layar >= 700px
                     },
-                    1200: {
-                        slidesPerView: 3, // Tambahkan jika ingin 3 slide untuk layar lebih besar
-                    },
                 }}
                 centeredSlides={true}
                 spaceBetween={30}
