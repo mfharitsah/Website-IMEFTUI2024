@@ -20,3 +20,9 @@
 .bidang:hover .bidang-hover {
     top: 0
 }
+
+@media (min-width: 1700px) {
+    .swiperParent {
+        width: 40rem /* 544px */;
+    }
+}

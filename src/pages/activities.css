@@ -27,8 +27,8 @@
 }
   
 .activity.hovered .gl-text {
-    font-size: 40px;
-    line-height: 46px;
+    font-size: 28px;
+    line-height: 34px;
 }
 
 .activity.clicked .overlay {
@@ -36,7 +36,7 @@
 }
   
 .activity.clicked .gl-text {
-    transform: translateY(-100px);
+    transform: translateY(-75px);
 }
   
 .activity.clicked .description {

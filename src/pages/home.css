@@ -4,6 +4,12 @@
     bottom:0.5px
 }
 
+@media (min-width: 1700px) {
+    .vismisTitle {
+        font-size: 10rem /* 544px */;
+    }
+}
+
 .isi-misi {
     height: 3px;
     padding: 0;
@@ -16,17 +22,11 @@
     padding: 6px
 }
 
-@media (max-width: 468px) {
+@media (max-width: 678px) {
     .vismis .misi:hover .isi-misi{
-        height: 325%;
+        height: 400%;
         padding: 6px;
-    }
-  }
-
-@media (min-width: 468px) {
-    .vismis .misi:hover .isi-misi{
-        height: 325%;
-        padding: 6px;
+        
     }
 
     .isi-misi {
@@ -36,6 +36,7 @@
         line-height: 0.9rem;
     }
   }
+
 
   @media (min-width: 678px) {
     .vismis .misi:hover .isi-misi{
@@ -69,5 +70,24 @@
         padding: 0;
         font-size: 0.7rem;
         line-height: 1rem;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .vismis .misi:hover .isi-misi{
+        height: 200%;
+        padding: 6px;
+    }
+
+    .isi-misi {
+        height: 3px;
+        padding: 0;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .nomor-misi {
+        font-size: 1.5rem;
+        line-height: 1.7rem;
     }
   }

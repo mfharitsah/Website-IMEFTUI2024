@@ -35,7 +35,7 @@ const ImageCard = ({ activity }) => {
 
     return (
         <div
-            className={`activity relative w-[28rem] h-[20rem] rounded-xl overflow-hidden transition-transform duration-300 ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
+            className={`activity relative w-[20rem] h-[14rem] rounded-xl overflow-hidden transition-transform duration-300 ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
@@ -45,12 +45,12 @@ const ImageCard = ({ activity }) => {
                 className="block w-full h-full object-cover"
                 alt={activity.name}
             />
-            <div className="overlay absolute flex flex-col justify-center align-center w-full h-full">
-                <p className="gl-text text-light text-center text-3xl font-semibold drop-shadow-xl">
+            <div className="overlay absolute flex flex-col justify-center align-center w-full h-full px-5">
+                <p className="gl-text text-light text-center text-xl font-semibold drop-shadow-xl">
                     {activity.name}
                 </p>
                 {isClicked && (
-                    <p className="description text-center mt-2">
+                    <p className="description text-xs text-center mt-2">
                         {activity.desc}
                     </p>
                 )}
