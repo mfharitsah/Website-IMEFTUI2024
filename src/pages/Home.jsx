@@ -121,21 +121,21 @@ const Home = () => {
             </div>
 
             <div className='w-full h-fit p-10 md:px-14'>
-                <p data-aos="fade-right" className={`w-full text-5xl md:text-7xl font-semibold text-center lg:text-start ${textGrandientStyleSun}`}>Our <span className={`${textGrandientStyle}`}>Benefits</span> </p>
+                <p data-aos="fade-right" className={`w-full text-5xl md:text-7xl font-semibold text-center lg:text-start ${textGrandientStyle}`}>What We <span className={`${textGrandientStyleSun}`}>Offer</span> </p>
                 <div data-aos="fade-left" className='w-full h-fit py-10 grid grid-cols-1 lg:grid-cols-3 place-items-center items-center gap-8'>
                     <div className='rounded-3xl bg-blue w-80 h-[26rem] flex flex-col justify-end p-6'>
-                        <div className='bg-light rounded-3xl p-1 cursor-pointer hover:scale-95 duration-200 shadow-lg'>
-                            <p className='text-blue text-2xl font-bold text-center'>Advocation</p>
+                        <div className='bg-light rounded-3xl p-1 cursor-pointer hover:scale-95 duration-200 shadow-lg flex justify-center'>
+                            <a href='/advocations' className='text-blue text-2xl font-bold text-center'>Advocation</a>
                         </div>
                     </div>
                     <div className='rounded-3xl bg-blue w-80 h-[26rem] flex flex-col justify-end p-6'>
-                        <div className='bg-light rounded-3xl p-1 cursor-pointer hover:scale-95 duration-200 shadow-lg'>
-                            <p className='text-blue text-2xl font-bold text-center'>Academics</p>
+                        <div className='bg-light rounded-3xl p-1 cursor-pointer hover:scale-95 duration-200 shadow-lg flex justify-center'>
+                            <a href='/academics' className='text-blue text-2xl font-bold text-center'>Academics</a>
                         </div>
                     </div>
                     <div className='rounded-3xl bg-blue w-80 h-[26rem] flex flex-col justify-end p-6'>
-                        <div className='bg-light rounded-3xl p-1 cursor-pointer hover:scale-95 duration-200 shadow-lg'>
-                            <p className='text-blue text-2xl font-bold text-center'>Competitions</p>
+                        <div className='bg-light rounded-3xl p-1 cursor-pointer hover:scale-95 duration-200 shadow-lg flex justify-center'>
+                            <a href='/contacts' className='text-blue text-2xl font-bold text-center'>External Services</a>
                         </div>
                     </div>
                 </div>

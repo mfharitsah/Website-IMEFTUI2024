@@ -8,7 +8,7 @@ const Navbar = () => {
     const menus = [
         { name: "Home", link: "home", isDropdown: false },
         { name: "Activities", link: "activities", isDropdown: true },
-        { name: "Advocation", link: "advocation", isDropdown: false },
+        { name: "Advocations", link: "advocations", isDropdown: false },
         { name: "Academics", link: "academics", isDropdown: false },
         { name: "Contacts", link: "contacts", isDropdown: false },
     ];

@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
-import bg_kesma from "../assets/advocation/bg-kesma.svg";
+import bg_kesma from "../assets/advocation/bg-kesma.webp";
 import logo_kesma from "../assets/advocation/logo-kesma-ellipse.svg";
 import BOP1 from "../assets/advocation/BOP/1.svg";
 import BOP2 from "../assets/advocation/BOP/2.svg";

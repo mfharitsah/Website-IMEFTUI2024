@@ -1,4 +1,3 @@
-import psb_ganjil from './psb-ganjil.png'
 import map_genap from './activities-img/map-genap.webp'
 import arak_genap from './activities-img/arak-genap.webp'
 import ingames from './activities-img/ingames.webp'
