@@ -7,6 +7,7 @@ import arrow2 from '../assets/main/arrow-2.svg'
 import arrow3 from '../assets/main/arrow-3.svg'
 import bg_1 from '../assets/main/elektro-bg-1.svg'
 import bg_2 from '../assets/main/elektro-bg-2.svg'
+import arrow_gif from '../assets/main/arrow.gif'
 import our from '../assets/main/our.png'
 import bg_activities from '../assets/activities/bg.png'
 
@@ -64,9 +65,7 @@ const Home = () => {
 
                 <a href="#ime-ftui" className='absolute bottom-20'>
                     <div className='w-full h-full flex flex-col items-center cursor-pointer'>
-                        <img src={arrow3} alt="" className='w-12 md:w-24' />
-                        <img src={arrow1} alt="" className='w-12 md:w-24' />
-                        <img src={arrow2} alt="" className='w-12 md:w-24' />
+                        <img src={arrow_gif} alt="" className='w-12 md:w-24' />
                     </div>
                 </a>
 
@@ -108,12 +107,12 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="our-activities bg-[image:var(--image-url)] bg-fixed h-fit xl:min-h-screen flex flex-col justify-center py-16 px-10 xl:px-36 mt-20 space-y-8"
+            <div className="our-activities bg-[image:var(--image-url)] bg-fixed h-fit xl:min-h-screen flex flex-col justify-center py-16 px-10 xl:px-20 mt-20 space-y-8"
                 style={{ '--image-url': `url(${bg_activities})` }}
             >
                 <div data-aos="fade-down" className="flex items-center h-fit gap-2">
-                    <img src={our} className="w-4 h-10 md:h-14 xl:h-16 mt-2" alt="" />
-                    <p className={`${textGrandientStyleSun} text-5xl md:text-7xl xl:text-8xl font-bold`}>Activities</p>
+                    <img src={our} className="w-4 h-10 md:h-14 mt-2" alt="" />
+                    <p className={`${textGrandientStyleSun} text-5xl md:text-7xl xl:text-7xl font-bold`}>Activities</p>
                 </div>
                 <div data-aos="fade-up" className="bg-light bg-opacity-10 p-5 rounded-2xl ring-1 ring-opacity-20 ring-light">
                     <SwiperActivities activities={homeActivities} />
@@ -123,13 +122,13 @@ const Home = () => {
             <div className="w-full h-fit flex flex-col justify-center p-10 px-20 lg:px-32 lg:min-h-screen">
                 <p
                     data-aos="fade-right"
-                    className={`w-full text-5xl md:text-7xl font-bold text-center lg:text-start ${textGrandientStyle}`}
+                    className={`w-full text-5xl md:text-6xl font-bold text-center lg:text-start ${textGrandientStyle}`}
                 >
-                    What We <span className={`${textGrandientStyleSun}`}>Offer</span>
+                    What We <span className={`${textGrandientStyleSun}`}>Offers</span>
                 </p>
                 <div
                     data-aos="fade-left"
-                    className="w-full h-[32rem] py-10 grid grid-cols-1 lg:grid-cols-3 gap-y-8 gap-x-20 place-items-center"
+                    className="w-full h-[28rem] py-10 grid grid-cols-1 lg:grid-cols-3 gap-y-8 gap-x-20 place-items-center"
                 >
                     {/* Card 1 */}
                     <div className="rounded-3xl bg-blue w-full h-full flex flex-col justify-end p-6">

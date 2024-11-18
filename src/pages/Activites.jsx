@@ -46,7 +46,7 @@ const ImageCard = ({ activity }) => {
                 alt={activity.name}
             />
             <div className="overlay absolute flex flex-col justify-center align-center w-full h-full px-5">
-                <p className="gl-text text-light text-center text-xl font-semibold drop-shadow-xl">
+                <p className="gl-text text-light text-center text-2xl font-bold drop-shadow-xl">
                     {activity.name}
                 </p>
                 {isClicked && (

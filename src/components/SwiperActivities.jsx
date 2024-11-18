@@ -25,7 +25,7 @@ const SwiperActivities = ({ activities }) => {
                         slidesPerView: 3,
                     }
                 }}
-                centeredSlides={false}
+                centeredSlides={true}
                 spaceBetween={30}
                 loop={true}
                 autoplay={{
@@ -72,7 +72,7 @@ const SlideContent = ({ content }) => {
     return (
         <div className="flex flex-col w-fit max-md:ml-0 max-md:w-full">
             <div
-                className={`activity relative w-[22rem] lg:w-[28rem] h-72 lg:h-80 rounded-xl overflow-hidden ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
+                className={`activity relative w-[22rem] lg:w-[20rem] h-72 lg:h-64 rounded-xl overflow-hidden ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleClick}
@@ -83,8 +83,8 @@ const SlideContent = ({ content }) => {
                     alt={content.name}
                 />
                 <div className="overlay absolute flex justify-center align-center w-full h-full px-3">
-                    <p className="gl-text text-light text-center text-3xl font-semibold drop-shadow-xl">{content.name}</p>
-                    {isClicked && <p className="description text-center">{content.desc}</p>}
+                    <p className="gl-text text-light text-center text-2xl font-bold drop-shadow-xl group-hover:text-3xl">{content.name}</p>
+                    {isClicked && <p className="description text-center text-xs">{content.desc}</p>}
                 </div>
             </div>
 
