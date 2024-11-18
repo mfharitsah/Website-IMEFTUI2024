@@ -1,10 +1,9 @@
-import psb_ganjil from './psb-ganjil.png'
-import sharesess from './activities-img/sharesess.svg'
-import mpktc from './activities-img/mpktc.svg'
-import comvis from './activities-img/comvis.svg'
-import asistensi from './activities-img/asistensi-uas-genap.svg'
-import sociotalk from './activities-img/sociotalk.svg'
-import technoskill1 from './activities-img/technoskill1.svg'
+import sharesess from './activities-img/sharesess.webp'
+import mpktc from './activities-img/mpktc.webp'
+import comvis from './activities-img/comvis.webp'
+import asistensi from './activities-img/asistensi-uas-genap.webp'
+import sociotalk from './activities-img/sociotalk.webp'
+import technoskill1 from './activities-img/technoskill1.webp'
 
 export default [
     {
