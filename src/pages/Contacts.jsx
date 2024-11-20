@@ -12,14 +12,14 @@ const Contacts = () => {
   const bgGrandientStyle = "bg-blue-1 bg-opacity-0 bg-gradient-to-b from-blue to-blue-1";
 
   return (
-    <div className='container w-full min-h-screen flex items-center gap-10 pl-20 my-20'>
-      <div className='w-3/5 h-fit flex flex-col text-light gap-5'>
-        <p className={`font-bold text-5xl`}>Reach our Contact Persons!</p>
-        <p>We are here to help! Feel free to reach out to us through any of the following channels. Whether it’s a question, suggestion, or collaboration request, our team is ready to assist you.
+    <div className='container w-full min-h-screen flex flex-col justify-center lg:flex-row items-center gap-10 lg:pl-20 my-20 max-lg:pt-16'>
+      <div className='w-full lg:w-3/5 h-fit flex flex-col text-light gap-5 border'>
+        <p className={`font-bold text-center lg:text-start text-3xl lg:text-5xl`}>Reach our Contact Persons!</p>
+        <p className='text-center lg:text-start text-xs md:text-sm lg:text-base'>We are here to help! Whether it’s a question, suggestion, or collaboration request, our team is ready to assist you.
         </p>
 
-        <div className='w-full h-fit flex gap-5'>
-          <div className={`harris ${bgGrandientStyle} w-fit h-fit flex flex-col p-3 rounded-lg`}>
+        <div className='w-full h-fit flex flex-col md:flex-row items-center justify-center lg:justify-start gap-0 lg:gap-5 max-lg:mt-5'>
+          <div className={`harris ${bgGrandientStyle} w-fit h-fit flex flex-col p-3 rounded-lg max-lg:scale-75`}>
             <div className='flex gap-1 items-center'>
               <p className='text-3xl font-semibold'>Harris</p>
               <p className='text-base font-semibold mt-2'>(TKom'22)</p>
@@ -36,7 +36,7 @@ const Contacts = () => {
             </div>
           </div>
 
-          <div className={`kania ${bgGrandientStyle} w-fit h-fit flex flex-col p-3 rounded-lg`}>
+          <div className={`kania ${bgGrandientStyle} w-fit h-fit flex flex-col p-3 rounded-lg max-lg:scale-75`}>
             <div className='flex gap-1 items-center'>
               <p className='text-3xl font-semibold'>Kania</p>
               <p className='text-base font-semibold mt-2'>(TKom'22)</p>
@@ -54,14 +54,14 @@ const Contacts = () => {
           </div>
         </div>
 
-        <div className='flex flex-col gap-1 mt-10'>
+        <div className='w-full flex flex-col items-center lg:items-start gap-1 mt-10 max-lg:items-center'>
           <div className={`${bgGrandientStyle} w-3/5 h-2 `}></div>
-          <p className={`font-bold text-3xl italic`}>Share Your Poster on Our Instagram!</p>
-          <p className='w-3/5 text-sm'>Use the link below to let us know your request, and we'll ensure your message reaches the right audience!</p>
+          <p className={`font-bold text-center lg:text-start text-2xl lg:text-5xl italic`}>Share Your Poster on Our Instagram!</p>
+          <p className='w-4/5 lg:w-3/5 text-xs lg:text-sm text-center lg:text-start'>Use the link below to let us know your request, and we'll ensure your message reaches the right audience!</p>
           <a href='https://bit.ly/EKSTERNALIME2024' className={`${bgGrandientStyle} w-fit text-lg mt-2 py-1 px-4 font-semibold rounded-lg`} >Submit Your Request</a>
         </div>
 
-        <div className='flex flex-col gap-1 mt-10'>
+        <div className='flex flex-col items-center lg:items-start gap-1 mt-10'>
           <div className={`${bgGrandientStyle} w-[40%] h-2 `}></div>
           <p className={`font-bold text-3xl italic`}>Follow Our Socials!</p>
           <div className='flex gap-2'>
@@ -73,7 +73,7 @@ const Contacts = () => {
 
       </div>
 
-      <div className='w-2/5 h-full'>
+      <div className='w-2/5 h-full max-lg:hidden'>
         <img src={komin} className='bg-contain rounded-lg' alt="" />
       </div>
     </div>

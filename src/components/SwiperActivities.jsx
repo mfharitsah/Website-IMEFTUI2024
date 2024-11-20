@@ -72,7 +72,7 @@ const SlideContent = ({ content }) => {
     return (
         <div className="flex flex-col w-fit max-md:ml-0 max-md:w-full">
             <div
-                className={`activity relative w-[22rem] lg:w-[20rem] h-72 lg:h-64 rounded-xl overflow-hidden ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
+                className={`activity relative w-[16rem] lg:w-[20rem] h-60 lg:h-64 rounded-xl overflow-hidden ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleClick}

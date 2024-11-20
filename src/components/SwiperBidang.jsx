@@ -34,7 +34,7 @@ const SwiperBidang = () => {
                 prevEl: '.swiper-button-prev',
             }}
             modules={[Autoplay, Navigation]}
-            className="mySwiper swiperParent rounded-3xl w-[24rem]"
+            className="mySwiper swiperParent rounded-3xl w-[18rem] lg:w-[24rem]"
         >
             {
                 bidangs.map((bidang, i) => (

@@ -55,11 +55,11 @@ const Home = () => {
                 data-aos="fade-down"
             >
 
-                <div className='h-fit flex flex-col'>
+                <div className='w-full justify-center items-center h-fit flex flex-col'>
                     <p className='text-light text-xs md:text-lg italic tracking-wider'>Sambut salam hangat dari kami...</p>
-                    <div className='text-5xl md:text-7xl lg:text-9xl flex tracking-wide gap-2 md:gap-6 '>
+                    <div className='text-5xl md:text-7xl flex flex-col md:flex-row lg:text-9xl  tracking-wide gap-2 md:gap-6 text-center md:text-start'>
                         <p className={`${textGrandientStyleSun} italic font-extrabold pr-3`}>PAGI</p>
-                        <h1 className=''><span className={`${textGrandientStyle} italic font-extrabold pr-3`} >ELEKTRO!</span></h1>
+                        <p className={` ${textGrandientStyle} italic font-extrabold pr-3`}>ELEKTRO!</p>
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div data-aos="fade-left" className='misi w-full relative text-center cursor-pointer'>
-                        <div name='' className='isi-misi text-start absolute bg-light space-y-1 p-2 duration-500 ease-in-out overflow-hidden'>
+                        <div name='' className='isi-misi text-start absolute bg-light space-y-1 p-2 duration-500 ease-in-out overflow-scroll'>
                             <p className=''><span className={`nomor-misi ${textGrandientStyle} font-extrabold text-sm lg:text-base`}>1</span> Membangun internalisasi IME FTUI 2024 yang dapat mencapai keseimbangan antara profesionalitas dan kekeluargaan sehingga menciptakan iklim kerja IME FTUI yang optimal dan progresif untuk seluruh fungsionarisnya</p>
                             <p><span className={`nomor-misi ${textGrandientStyle} font-extrabold text-base`}>2</span> Mengoptimalkan pengembangan lembaga dan potensi individu pengurus secara evaluatif dan konstruktif agar menciptakan regenerasi yang unggul</p>
                             <p><span className={`nomor-misi ${textGrandientStyle} font-extrabold text-base`}>3</span> Mewadahi pembinaan dan pengembangan potensi warga Departemen Teknik Elektro sesuai minat, bakat, core competence DTE secara komprehensif dan
@@ -107,7 +107,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="our-activities bg-[image:var(--image-url)] bg-fixed h-fit xl:min-h-screen flex flex-col justify-center py-16 px-10 xl:px-20 mt-20 space-y-8"
+            <div className="our-activities bg-[image:var(--image-url)] bg-fixed h-fit xl:min-h-screen flex flex-col justify-center py-16 px-6 xl:px-20 mt-20 space-y-8"
                 style={{ '--image-url': `url(${bg_activities})` }}
             >
                 <div data-aos="fade-down" className="flex items-center h-fit gap-2">
@@ -124,7 +124,7 @@ const Home = () => {
                     data-aos="fade-right"
                     className={`w-full text-5xl md:text-6xl font-bold text-center lg:text-start ${textGrandientStyle}`}
                 >
-                    What We <span className={`${textGrandientStyleSun}`}>Offers</span>
+                    What We <span className={`${textGrandientStyleSun}`}>Offer</span>
                 </p>
                 <div
                     data-aos="fade-left"
